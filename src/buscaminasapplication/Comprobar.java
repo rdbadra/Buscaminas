@@ -14,49 +14,49 @@ public class Comprobar {
         int message = checkSurroundings(tabla,count,pos1,pos2);
         boton.setText(""+message);
         boton.setEnabled(false);
+        boton.setName("Disabled");
         if(boton.getText().equals("0")){
-            if(checkItsIn(tabla,pos1-1,pos2)){
-            if(!tabla[pos1-1][pos2].getName().equals("BOMB")){
-                comp(tabla[pos1-1][pos2]);
+            if(checkItsIn(tabla,pos1-1,pos2)&&!(tabla[pos1-1][pos2].getName().equals("Disabled"))){
+                if(!tabla[pos1-1][pos2].getName().equals("BOMB")){
+                    comp(tabla[pos1-1][pos2]);
+                }
             }
-        }
-        if(checkItsIn(tabla,pos1-1,pos2-1)){
-            if(!tabla[pos1-1][pos2-1].getName().equals("BOMB")){
-                comp(tabla[pos1-1][pos2-1]);
+            if(checkItsIn(tabla,pos1-1,pos2-1)&&!(tabla[pos1-1][pos2-1].getName().equals("Disabled"))){
+                if(!tabla[pos1-1][pos2-1].getName().equals("BOMB")){
+                    comp(tabla[pos1-1][pos2-1]);
+                }
             }
-        }
-        if(checkItsIn(tabla,pos1-1,pos2+1)){
-            if(!tabla[pos1-1][pos2+1].getName().equals("BOMB")){
-                comp(tabla[pos1-1][pos2+1]);
+            if(checkItsIn(tabla,pos1-1,pos2+1)&&!(tabla[pos1-1][pos2+1].getName().equals("Disabled"))){
+                if(!tabla[pos1-1][pos2+1].getName().equals("BOMB")){
+                    comp(tabla[pos1-1][pos2+1]);
+                }
             }
-        }
-        if(checkItsIn(tabla,pos1,pos2+1)){
-            if(!tabla[pos1][pos2+1].getName().equals("BOMB")){
-                count++;
+            if(checkItsIn(tabla,pos1,pos2+1)&&!(tabla[pos1][pos2+1].getName().equals("Disabled"))){
+                if(!tabla[pos1][pos2+1].getName().equals("BOMB")){
+                    comp(tabla[pos1][pos2+1]);
+                }
             }
-        }
-        if(checkItsIn(tabla,pos1,pos2-1)){
-            if(!tabla[pos1][pos2-1].getName().equals("BOMB")){
-                comp(tabla[pos1][pos2-1]);
+            if(checkItsIn(tabla,pos1,pos2-1)&&!(tabla[pos1][pos2-1].getName().equals("Disabled"))){
+                if(!tabla[pos1][pos2-1].getName().equals("BOMB")){
+                    comp(tabla[pos1][pos2-1]);
+                }
             }
-        }
-        if(checkItsIn(tabla,pos1+1,pos2)){
-            if(!tabla[pos1+1][pos2].getName().equals("BOMB")){
-                comp(tabla[pos1+1][pos2]);
+            if(checkItsIn(tabla,pos1+1,pos2)&&!(tabla[pos1+1][pos2].getName().equals("Disabled"))){
+                if(!tabla[pos1+1][pos2].getName().equals("BOMB")){
+                    comp(tabla[pos1+1][pos2]);
+                }
             }
-        }
         
-        if(checkItsIn(tabla,pos1+1,pos2-1)){
-            if(!tabla[pos1+1][pos2-1].getName().equals("BOMB")){
-                comp(tabla[pos1+1][pos2-1]);
+            if(checkItsIn(tabla,pos1+1,pos2-1)&&!(tabla[pos1+1][pos2-1].getName().equals("Disabled"))){
+                if(!tabla[pos1+1][pos2-1].getName().equals("BOMB")){
+                    comp(tabla[pos1+1][pos2-1]);
+                }   
             }
-        }
-        if(checkItsIn(tabla,pos1+1,pos2+1)){
-            if(!tabla[pos1+1][pos2+1].getName().equals("BOMB")){
-                comp(tabla[pos1+1][pos2+1]);
+            if(checkItsIn(tabla,pos1+1,pos2+1)&&!(tabla[pos1+1][pos2+1].getName().equals("Disabled"))){
+                if(!tabla[pos1+1][pos2+1].getName().equals("BOMB")){
+                    comp(tabla[pos1+1][pos2+1]);
+                }
             }
-        }
-        
         }
     }
     

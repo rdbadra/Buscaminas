@@ -9,8 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Panel extends JPanel{
-    private final static int numberRows = 4;
-    private final static int numberColumns = 4;
+    private final static int numberRows = 6;
+    private final static int numberColumns = 6;
     ArrayList<String> list = new ArrayList<>();
     private static JButton[][] tablero = new JButton[numberRows][numberColumns];
     Listener listener = new Listener();
@@ -21,10 +21,10 @@ public class Panel extends JPanel{
     }
 
     private void initBombs() {
-        for (int i = 1; i <= 12; i++) {
+        for (int i = 1; i <= 30; i++) {
             list.add(String.valueOf(i));
         }
-        for (int i = 13; i <= 16; i++) {
+        for (int i = 31; i <= 36; i++) {
             list.add("BOMB");
         }
         Collections.shuffle(list);
