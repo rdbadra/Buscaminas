@@ -34,7 +34,6 @@ public class Panel extends JPanel{
         GridLayout layout = new GridLayout(numberRows, numberColumns, 2, 2);
         this.setLayout(layout);
         int index=0;
-        int pos = 0;
         for (int i = 0; i < numberRows; i++) {
             for (int j = 0; j < numberColumns; j++) {
                 tablero[i][j] = new JButton();
@@ -43,7 +42,6 @@ public class Panel extends JPanel{
                 tablero[i][j].addActionListener(listener);
                 this.add(tablero[i][j]);
                 index++;
-                
             }
         }
     }

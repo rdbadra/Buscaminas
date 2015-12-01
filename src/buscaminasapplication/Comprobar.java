@@ -20,7 +20,7 @@ public class Comprobar {
                 for(int j = -1; j <= 1; j++){
                     if(checkItsIn(tabla,pos1+i,pos2+j)&&!(tabla[pos1+i][pos2+j].getName().equals("Disabled"))){
                         if(!tabla[pos1+i][pos2+j].getName().equals("BOMB")){
-                        comp(tabla[pos1+i][pos2+j]);
+                            comp(tabla[pos1+i][pos2+j]);
                         }
                     }
                 }
@@ -29,60 +29,18 @@ public class Comprobar {
     }
     
     private static int checkSurroundings(JButton[][] boton, int count, int posX, int posY){
-        count+=checkUp(boton, 0, posX, posY)+checkSides(boton,0, posX, posY)+checkDown(boton,0, posX, posY);
-        return count;
-    }
-    private static int checkUp(JButton[][] boton, int count, int pos1, int pos2){
-        if(checkItsIn(boton,pos1-1,pos2)){
-            if(boton[pos1-1][pos2].getName().equals("BOMB")){
-                count++;
-            }
-        }
-        if(checkItsIn(boton,pos1-1,pos2-1)){
-            if(boton[pos1-1][pos2-1].getName().equals("BOMB")){
-                count++;
-            }
-        }
-        if(checkItsIn(boton,pos1-1,pos2+1)){
-            if(boton[pos1-1][pos2+1].getName().equals("BOMB")){
-                count++;
+        for(int i = -1; i <= 1; i++){
+            for(int j = -1; j <= 1; j++){
+                if(checkItsIn(boton,posX+i,posY+j)){
+                    if(boton[posX+i][posY+j].getName().equals("BOMB")){
+                        count++;
+                    }
+                }
             }
         }
         return count;
     }
-    private static int checkSides(JButton[][] boton, int count, int pos1, int pos2){
-        if(checkItsIn(boton,pos1,pos2+1)){
-            if(boton[pos1][pos2+1].getName().equals("BOMB")){
-                count++;
-            }
-        }
-        if(checkItsIn(boton,pos1,pos2-1)){
-            if(boton[pos1][pos2-1].getName().equals("BOMB")){
-                count++;
-            }
-        }
-        return count;
-    }
-    private static int checkDown(JButton[][] boton, int count, int pos1, int pos2){
-        if(checkItsIn(boton,pos1+1,pos2)){
-            if(boton[pos1+1][pos2].getName().equals("BOMB")){
-                count++;
-            }
-        }
-        
-        if(checkItsIn(boton,pos1+1,pos2-1)){
-            if(boton[pos1+1][pos2-1].getName().equals("BOMB")){
-                count++;
-            }
-        }
-        if(checkItsIn(boton,pos1+1,pos2+1)){
-            if(boton[pos1+1][pos2+1].getName().equals("BOMB")){
-                count++;
-            }
-        }
-        return count;
-    }
-    
+   
     private static boolean checkItsIn(JButton[][] boton, int pos1, int pos2){
         int end = boton.length;
         if(pos1>=end || pos2>=end){
