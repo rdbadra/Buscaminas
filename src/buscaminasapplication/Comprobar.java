@@ -16,45 +16,13 @@ public class Comprobar {
         boton.setEnabled(false);
         boton.setName("Disabled");
         if(boton.getText().equals("0")){
-            if(checkItsIn(tabla,pos1-1,pos2)&&!(tabla[pos1-1][pos2].getName().equals("Disabled"))){
-                if(!tabla[pos1-1][pos2].getName().equals("BOMB")){
-                    comp(tabla[pos1-1][pos2]);
-                }
-            }
-            if(checkItsIn(tabla,pos1-1,pos2-1)&&!(tabla[pos1-1][pos2-1].getName().equals("Disabled"))){
-                if(!tabla[pos1-1][pos2-1].getName().equals("BOMB")){
-                    comp(tabla[pos1-1][pos2-1]);
-                }
-            }
-            if(checkItsIn(tabla,pos1-1,pos2+1)&&!(tabla[pos1-1][pos2+1].getName().equals("Disabled"))){
-                if(!tabla[pos1-1][pos2+1].getName().equals("BOMB")){
-                    comp(tabla[pos1-1][pos2+1]);
-                }
-            }
-            if(checkItsIn(tabla,pos1,pos2+1)&&!(tabla[pos1][pos2+1].getName().equals("Disabled"))){
-                if(!tabla[pos1][pos2+1].getName().equals("BOMB")){
-                    comp(tabla[pos1][pos2+1]);
-                }
-            }
-            if(checkItsIn(tabla,pos1,pos2-1)&&!(tabla[pos1][pos2-1].getName().equals("Disabled"))){
-                if(!tabla[pos1][pos2-1].getName().equals("BOMB")){
-                    comp(tabla[pos1][pos2-1]);
-                }
-            }
-            if(checkItsIn(tabla,pos1+1,pos2)&&!(tabla[pos1+1][pos2].getName().equals("Disabled"))){
-                if(!tabla[pos1+1][pos2].getName().equals("BOMB")){
-                    comp(tabla[pos1+1][pos2]);
-                }
-            }
-        
-            if(checkItsIn(tabla,pos1+1,pos2-1)&&!(tabla[pos1+1][pos2-1].getName().equals("Disabled"))){
-                if(!tabla[pos1+1][pos2-1].getName().equals("BOMB")){
-                    comp(tabla[pos1+1][pos2-1]);
-                }   
-            }
-            if(checkItsIn(tabla,pos1+1,pos2+1)&&!(tabla[pos1+1][pos2+1].getName().equals("Disabled"))){
-                if(!tabla[pos1+1][pos2+1].getName().equals("BOMB")){
-                    comp(tabla[pos1+1][pos2+1]);
+            for(int i = -1; i <= 1; i++){
+                for(int j = -1; j <= 1; j++){
+                    if(checkItsIn(tabla,pos1+i,pos2+j)&&!(tabla[pos1+i][pos2+j].getName().equals("Disabled"))){
+                        if(!tabla[pos1+i][pos2+j].getName().equals("BOMB")){
+                        comp(tabla[pos1+i][pos2+j]);
+                        }
+                    }
                 }
             }
         }
@@ -125,5 +93,4 @@ public class Comprobar {
         }
         return true;
     }
-    
 }
